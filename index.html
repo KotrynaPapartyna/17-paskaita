@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>17 paskaita</title>
+</head>
+
+<body>
+    <script>
+        "use strict"
+        var x, a, suma;
+        x=5;
+        a=3;
+        suma= a+x;
+
+        console.log ("skaiciu suma");
+        console.log (suma);
+
+        var tekstas= "labas";
+        var skaicius = 5; 
+
+        console.log (tekstas+skaicius); 
+        console.log (tekstas*skaicius) // Nan
+
+
+        //lygybe- priskyrimas
+        x=a; // x= 3;
+
+        //suma
+        x+=5; //x=x+5 x=3+5=8
+
+        //skirtumas
+        x-=18 // x=x-18 x=8-18=-10
+
+        //daugyba
+        x*=10 //x=x*10  x=-10*10= -100
+
+
+        //dalyba
+        x /=-10 //x=x / (-10) x=-100 / (-10) =10
+
+        //liekana
+        x %=a  //x=x% a x=10 %3 =1
+
+        //laipsnis
+        x**=19 // x= x**19 = 1 **19=1
+
+        //uzduotis- ar skaicius yra didesnis uz 0? jeigu taip- padauginti ji is 2, jeigu ne- padalintis is 2
+        // (skliausteliuose salyga)  { rasomas kodas, vykdomas, kai salyga igyvendinama}
+        //true or false
+
+        var skaicius = 15;
+
+        //-15 >0- false, pereinama i else ir vkdomi veiksmai
+        //15 >0 - true i else nepereinama ir vykdomi veiksmai 
+
+        // >
+        //<
+        //>=
+        //<=
+        //==
+        //!=
+        // skaicius yra 15, yra false, pereina i selse, skaiciu padalina is 2 (antra salyga)
+
+        // skaicius =0, 0<0 yra false, einama i else salyga, 0>0- false, einama i else salyga, jeigu 0==0- tiesa
+        //skaicius= "labas", labas <0, false, einama i else salyga
+        
+        skaicius = "labas" ; 
+        // 0 < 0 yra false, pereina i else salyga
+        
+        if(skaicius <0) {
+            skaicius/=2; // skaicius = skaicius/2;
+            console.log("skaicius yra didesnis uz 0:"+skaicius);
+
+        } else if (skaicius >0) {
+            skaicius *=2 //skaicius= skaicius *2
+            console.log("skaicius yra mazesnis uz 0:"+skaicius);
+        } else if (skaicius==0) {
+            console.log("skaicius yra 0");
+        } else {
+            console.log("skaicius nera skaicius");
+        }
+
+        // patikrinti ar skaicius yra lyginis ar nelyginis
+
+        skaicius= "labas"
+
+        //skaicius%2=0- skaicius lyginis 
+        //skaicius%2!=0- skaicius nelyginis
+        //0 nepriskiriamas nei prie lyginiu nei prie nelyginiu 
+        //salygoje visada rasomi du ==
+
+        if (skaicius == 0) {
+            console.log("skaicius yra lygus 0");
+        } else if(skaicius % 2 == 0) {
+            console.log("skaicius yra lyginis");
+        } else if (skaicius % 2 !=0) {
+            console.log("skaicius yra nelyginis");
+        } else {
+            console.log("skaicius net ne skaicius");
+        }
+
+        //trizenklio skaiciaus skaitmenis priskirti atskiram kintamajam. Jeigu siu skaitmenu suma yra daugiau kaip 10,
+        // skaiciai sudauginami, kitu atveju- kiekvienas skaicius turi buti padauginamas is 3
+           
+        skaicius= 658; //[100-999- imami visi trizenkliai skaiciai ]
+        //pasirenkamas principas
+        //a=6- pirmasis skaitmuo is kaires
+        //b=5- vidurinysis skaitmuo
+        //c=8- paskutinis skaitmuo imant is kaires
+        
+        var a,b,c;
+        a=parseInt(skaicius/100);         // 658/100= 6.58~ 6 /6 yra sveikoji dalis/
+        b=parseInt(skaicius % 100 /10);   // 658/100= 6.58 
+        c=skaicius %10;                   // 658 % 100=  6   8 (liekana)
+
+        // b=(skaicius-a*100-c)/10 - galimas ir toks b variantas 
+
+        var suma, sandauga;
+        suma= a+b+c; //6+5+8=19 
+        
+        if (suma >10) {
+            sandauga= a*b*c;
+
+        } else {
+            a/=3; //a = a/3
+            b/=3; //b = b/3
+            c/=3; //c = c/3
+        }
+
+        console.log(a);
+        console.log(b);
+        console.log(c);
+        console.log(suma);
+
+        console.log("pirmas"+a);
+        console.log("vidurinis"+b);
+        console.log("trecias"+c);
+        console.log("suma"+suma);
+        console.log("sandauga"+sandauga);
+
+        // 1. jeigu skaitmenys yra pvz 123 tada galima "console.log("sandauga"+sandauga)" deti i IF. 
+        // 2. nes kitaip jo nefiksuoja/ neranda
+        // arba- galima "var sandauga" galima detis i salyga IF. 
+
+
+        //patikrinkite ar is triju krastiniu galima sudaryti trikampi
+        let k1, k2, k3;
+
+        k1=3;
+        k2=4;
+        k3=100; 
+
+        //salygos sakinys 
+        //k1+k2>k3,  k2+k3>k1,   k1+k3>k2
+        // visos salygos turi buti - true, kitaip trikampis nesusidarys
+
+        // && (and)  ir II (or)    &&- logine daugyba,  II- logine sudetis 
+        // true= 1
+        // false= 0 
+
+        //1 && 1 && 1-  true
+        //1 && 0 && 0 - false
+        // 0 && 1 && 1 =0 
+
+        if ( (k1+k2>k3) && (k2+k3+k1) && (k1+k3+k2)) {
+            console.log("trikampi sudaryti galima")
+        } else {
+            console.log("trikampio sudaryti negalima")
+        }
+
+        //suprogramuoti skripta, kuris rastu didziausia skaiciu is dvieju aprasytu
+
+        var x, y; 
+        x=70;
+        y=88; 
+
+        if (x>y) {
+            console.log(x + "daugiau uz" + y)
+        }   else if (y>x) {
+            console.log (y+ "daugiau uz" + x);
+        } else {
+            console.log("abu skaiciai lygus");
+        }
+
+
+
+
+    </script>
+
+
+</body>
+</html>
